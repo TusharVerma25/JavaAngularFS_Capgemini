@@ -1,0 +1,21 @@
+Git
+
+FOR the First Time
+
+1. download git bash from https://git-scm.com/downloads
+2. create repository and local file folder with same name
+3. git init
+4. git add <file name with path>    OR
+    git add .          // for all files to update
+5. git branch -M main
+6. git remote add origin https://github.com/TusharVerma25/TusharVerma25.git
+7. git commit -m "comment"
+8. git push -u origin main
+
+
+From 2nd time and onwards
+1. git add <file name with path>    OR
+    git add .          // for all files to update
+2. git branch -M main
+3. git commit -m "comment"
+4. git push -u origin main
