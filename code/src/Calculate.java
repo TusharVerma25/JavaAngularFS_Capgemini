@@ -3,7 +3,7 @@ class Calculator{
     private int op1;
     private int op2;
 
-    public Calculator(int op1, int op2) {
+    public Calculator() {
         this.op1 = op1;
         this.op2 = op2;
     }
@@ -45,15 +45,20 @@ class Calculator{
     }
 }
 
+class ScientificCalc extends Calculator{
+
+    public void area(int side) {
+        System.out.println(side*side);
+    }
+}
 public class Calculate {
 
     public static void main(String[] args) {
 
-        Calculator calculator= new Calculator(10,4);
-        System.out.println(calculator.add());
-        System.out.println(calculator.subtract());
-        System.out.println(calculator.multiply());
-        System.out.println(calculator.divide());
-        System.out.println(calculator);
+        ScientificCalc obj = (ScientificCalc) new Calculator(); //down casting
+        obj.area(5);
+
+        Calculator obj1 = new ScientificCalc();
+        //obj1.
     }
 }
