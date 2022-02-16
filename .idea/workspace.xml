@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e52fb5-a5a9-48ba-ae6e-71fa359e5363" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/code/code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/code/code.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/out/production/code/com/mysite/ExceptionalHandling.class" beforeDir="false" afterPath="$PROJECT_DIR$/code/out/production/code/com/mysite/ExceptionalHandling.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/com/mysite/ExceptionalHandling.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/com/mysite/ExceptionalHandling.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

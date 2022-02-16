@@ -44,5 +44,20 @@ public class ExceptionalHandling {
         Account account = new Account(5000);
         account.withdrawAmount(8000);
         account.withdrawAmount(1000);
+
+//        int[] arr = new int[4];
+//        try {
+//            System.out.println("before exception");
+//            arr[4]=5;
+//            System.out.println("after exception");
+//        }
+//        catch(Exception e) {
+//            System.out.println(e);
+//        }
+//        finally {
+//            System.out.println("finally block executed");
+//        }
+
+
     }
 }
