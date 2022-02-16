@@ -170,7 +170,7 @@ class Student {
 class StudentUtility {
 
     public double getAverage(Student std) {
-        return (std.getPhysicsMarks()+std.getPhysicsMarks()+std.getMathsMarks())/3.0;
+        return (std.getChemistryMarks()+std.getPhysicsMarks()+std.getMathsMarks())/3.0;
     }
 
     public void getGrade(Student std) {
@@ -250,17 +250,18 @@ public class CalculateGrade {
 
         AmazonHiringDepartment amazonHriring = new AmazonHiringDepartment();
         eligibleStudents=amazonHriring.shortlistEligibleStudents(stdArray);
-//        System.out.println("Elegible Students for Amazon");
-//        stdUtility.display(eligibleStudents);
+        System.out.println("Elegible Students for Amazon");
+        stdUtility.display(eligibleStudents);
 
         GoogleHiringDepartment googleHriring = new GoogleHiringDepartment();
         eligibleStudents=googleHriring.shortlistEligibleStudents(stdArray);
-//        System.out.println("Elegible Students for Google");
-//        stdUtility.display(eligibleStudents);
+        System.out.println("Elegible Students for Google");
+        stdUtility.display(eligibleStudents);
 
         FlipkartHiringDepartment filpkartHriring = new FlipkartHiringDepartment();
-//        eligibleStudents=filpkartHriring.shortlistEligibleStudents(stdArray);/  System.out.println("Elegible Students for Flipkart");
-//        stdUtility.display(eligibleStudents);
+        eligibleStudents=filpkartHriring.shortlistEligibleStudents(stdArray);
+        System.out.println("Elegible Students for Flipkart");
+        stdUtility.display(eligibleStudents);
 
         stdUtility.hiredBy(stdArray[2],fbHriring,amazonHriring,googleHriring,filpkartHriring);
 

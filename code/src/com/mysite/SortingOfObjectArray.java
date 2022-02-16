@@ -81,20 +81,12 @@ public class SortingOfObjectArray {
 
         Customer[] customerArray=new Customer[5];
         customerArray[0]= new Customer(101,"Suraj");
-        customerArray[1]= new Customer(100,"Raj");
+        customerArray[1]= new Customer(101,"Raj");
         customerArray[2]= new Customer(103,"Tom");
         customerArray[3]= new Customer(105,"Aman");
         customerArray[4]= new Customer(104,"Rajesh");
 
-        CustomerSorterUtility sort=new CustomerSorterUtility();
-        sort.sortBy(customerArray,customerArray.length,"id");
-        System.out.println("Sorted by Id");
         System.out.println(Arrays.toString(customerArray));
-
-        sort.sortBy(customerArray,customerArray.length,"name");
-        System.out.println("Sorted by Name");
-        System.out.println(Arrays.toString(customerArray));
-
         Arrays.sort(customerArray);
         System.out.println("Sorted by both(Id and Name)");
         System.out.println(Arrays.toString(customerArray));
