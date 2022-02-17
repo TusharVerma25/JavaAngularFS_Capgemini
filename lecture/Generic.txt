@@ -1,0 +1,31 @@
+class myClass<T>{
+	
+	private T mydata;
+	
+	public myClass(T mydata)
+	{
+		this.mydata=mydata;
+	}
+	
+	public T getmyData()
+	{
+		return this.mydata;
+	}
+	
+	
+}
+
+
+public class GenClassDemo {
+
+	public static void main(String[] args) {
+		myClass <Float> obj1=new myClass(3.4);
+		
+		System.out.println(obj1.getmyData());
+		
+		myClass <String> obj2=new myClass("Hello");
+		System.out.println(obj2.getmyData());
+		
+	}
+
+}
