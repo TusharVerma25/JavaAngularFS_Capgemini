@@ -1,0 +1,62 @@
+Capgemini (IMPORTANT)
+
+Assessment Components
+
+Module 1
+
+> MCQ - 30MCQs (30Marks) - 1.5hrs
+> Coding Test (MPT) - 70 marks (120mins) = 4 Qustions
+	- 3 Coding Q - 20 marks each (total 60marks)
+	- 1 Coding Q - 10 marks (total 10 marks)
+	- Total coding marks = 70 marks
+
+Total Module 1 marks = MCQ 30 + Coding 70 = 100 Marks
+
+Passing: >60% (cum) (MCQ + MPT)
+
+---------------------------------------------------------------
+L1 Test
+
+> MCQ (.NET & Angular) = 60 MCQs - 60Marks (120 mins)
+	- Passing >60%
+
+> Sprint Evaluation (.NET Batch) (VIVA) = SME from CG, wl talk to the groups, they wl conduct VIVA (Project + QnA)
+> L1 Coding (Angular Batch) = 1 Question 
+	- Pass or Fail
+----------------------------------------------------------------
+
+Before your exams M1 and L1 - CG wl allocate Practice Test on DoSelect Platform (by GC)
+
+> Practice Test link 3-5 days prior to your M1 exam date (.NET + Angular)
+> Practice Test link 1-2 days prior to you L1 exam date (this is not applicable for .NET)
+
+	- 8 problems statement to Practice 
+	- 10 attempts to practice
+	- to Complete your Practice Test b4 M1/L1 exams
+-----------------------------------------------------------------
+
+Imarticus wl allocate assessment/assignment/coding test on "LMS"
+
+> Imartucs wl allocate based on the attendance
+> 3-5 days prior to your M1
+
+-----------------------------------------------------------------
+
+Class Representative by 15th Feb EOD
+
+> SPOC
+> CR - also Zoom admin details - CR wl share the class recordings on whats app group
+> CR - POC - M1, L1, Practice Test link, raining any concerns, trainer feedback, student coming lates, didn't after the break etc.
+
+-----------------------------------------------------------------
+
+Attendance has be >90% to be in the Training (M1, L1 etc. to be considered)
+
+----------------------------------------------------------------
+
+> During exam - Switch on the camera, bright lights
+> No unethical practice
+> Good Wifi
+> Excellent laptop with all logistics
+
+---------------------------------------------------------------
