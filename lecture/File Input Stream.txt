@@ -1,0 +1,26 @@
+//FileInputStreamReader reads the data from file	
+	// InputStreamReader data in bytes into data in character
+
+*********FOR THIS CREATE A FILE NAMED A.TXT***********
+
+
+	char [] streams= new char[100];
+	
+	
+	try {
+	
+
+		FileInputStream f1 = new FileInputStream("a.txt");
+		
+		InputStreamReader isr=new InputStreamReader(f1);
+		
+		isr.read(streams);
+		System.out.println("The characters from the files are");
+		System.out.println(streams);
+	
+		isr.close();
+	
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}

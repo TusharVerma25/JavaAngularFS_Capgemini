@@ -42,8 +42,8 @@ public class ExceptionalHandling {
     public static void main(String[] args) {
 
         Account account = new Account(5000);
-        account.withdrawAmount(8000);
-        account.withdrawAmount(1000);
+       // account.withdrawAmount(8000);
+       // account.withdrawAmount(1000);
 
 //        int[] arr = new int[4];
 //        try {
@@ -58,6 +58,12 @@ public class ExceptionalHandling {
 //            System.out.println("finally block executed");
 //        }
 
+        StringBuffer sb2=new StringBuffer();
+        System.out.println(sb2.capacity());
+        sb2.insert(0, "Data");
+        System.out.println(sb2);
+        sb2.insert(1, "formationdfdfdfdfdf");
+        System.out.println(sb2);
 
     }
 }
