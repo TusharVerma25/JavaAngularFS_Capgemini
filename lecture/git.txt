@@ -17,5 +17,5 @@ From 2nd time and onwards
 1. git add <file name with path>    OR
     git add .          // for all files to update
 2. git branch -M main
-3. git commit -m "comment"
+3. git commit -m "commit"
 4. git push -u origin main
