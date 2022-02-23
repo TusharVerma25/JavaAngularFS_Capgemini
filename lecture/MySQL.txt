@@ -11,3 +11,5 @@ CREATE TABLE stores (
 	state VARCHAR (10),
 	zip_code VARCHAR (5)
 );
+
+desc stores;
