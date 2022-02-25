@@ -1,0 +1,19 @@
+CREATE TABLE library (
+	book_id INT  PRIMARY KEY,
+	book_name VARCHAR (255) NOT NULL,
+	author VARCHAR (25),
+	publish_year VARCHAR (255),
+	price INT
+);
+
+insert into library
+VALUES (101, 'The Little Book of Encouragement', 'Dalai Lama', '2002', 499.50);
+
+insert into library
+VALUES (102, 'Home in the World', 'Amartya Sen', '2007', 350.50);
+
+select * from library;
+
+UPDATE library SET publish_year = '2001' WHERE book_id = 101;
+
+delete from library where book_id = 101;
