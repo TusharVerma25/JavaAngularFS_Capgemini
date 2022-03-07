@@ -163,7 +163,8 @@ class Student {
 
     @Override
     public String toString() {
-        return this.getId() + " " + this.getName();
+        return "Student Roll is : " + this.getId() + "\nStudent Name is : " + this.getName()
+                + "\nStudent Marks is : " + this.getMathsMarks();
     }
 }
 
@@ -264,6 +265,5 @@ public class CalculateGrade {
         stdUtility.display(eligibleStudents);
 
         stdUtility.hiredBy(stdArray[2],fbHriring,amazonHriring,googleHriring,filpkartHriring);
-
     }
 }

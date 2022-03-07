@@ -1,0 +1,16 @@
+create database demodb;
+use demodb;
+
+CREATE TABLE employee (
+	id INT  PRIMARY KEY,
+	name VARCHAR (50) NOT NULL,
+	address VARCHAR (255),
+	salary INT
+);
+
+insert into employee
+VALUES (10, 'Raj', 'Hyderbad', 150000);
+
+select * from employee;
+
+delete from employee where name='Raj';
