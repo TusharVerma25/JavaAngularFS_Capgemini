@@ -1,0 +1,147 @@
+package com.pack.pojo;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
+public class Employee {
+
+	public Employee()
+	{}
+    @Id
+    @Column(name="eid")
+  
+   private Long eid;
+    @Column(name="ename")
+
+   private String ename;
+    @Column(name="email")
+
+   private String email;
+    @Column(name="dept")
+
+   private String department;
+
+   public Long getEid() {
+	return eid;
+}
+public void setEid(int i) {
+	this.eid = (long) i;
+}
+public String getEname() {
+	return ename;
+}
+public void setEname(String ename) {
+	this.ename = ename;
+}
+public String getEmail() {
+	return email;
+}
+public void setEmail(String email) {
+	this.email = email;
+}
+public String getDepartment() {
+	return department;
+}
+public void setDepartment(String department) {
+	this.department = department;
+}
+   
+     
+}=========================
+
+package com.pack.pojo;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class mainApp {
+
+	private static final EntityManagerFactory emFactoryObj;
+    private static final String PERSISTENCE_UNIT_NAME = "employee";  
+ 
+    static {
+        emFactoryObj = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+    }
+ 
+    // This Method Is Used To Retrieve The 'EntityManager' Object
+    public static EntityManager getEntityManager() {
+        return emFactoryObj.createEntityManager();
+    }
+ 
+	public static void main(String[] args) {
+
+	 
+	        EntityManager entityMgr = getEntityManager();
+	        entityMgr.getTransaction().begin();
+	 
+	        Employee emp = new Employee();
+	        emp.setEid(1010);
+	        emp.setEname("Sushant");
+	        emp.setEmail("s@hmail.com");
+	        entityMgr.persist(emp);
+	 
+	        entityMgr.getTransaction().commit();
+	 
+	        entityMgr.clear();
+	        System.out.println("Record Successfully Inserted In The Database");
+	    }
+	}
+=========================================================
+
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+    xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="employee" transaction-type="RESOURCE_LOCAL">
+    
+<class>com.pack.pojo.Employee</class>      
+        <properties>
+            <!-- Configuring The Database Connection Details -->
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hbdb" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="root" />          
+        </properties>
+    </persistence-unit>
+</persistence>
+
+===============================================
+<dependencies>
+        <!-- https://mvnrepository.com/artifact/org.eclipse.persistence/eclipselink -->
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>eclipselink</artifactId>
+            <version>2.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>javax.persistence</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.23</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>4.2.8.Final</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.2.8.Final</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>

@@ -1,0 +1,132 @@
+Eclipse
+EclipseLink
+mysql
+
+Step1: Create Java Project
+Create a Java project "JPAEXAMPLE". Create a folder "lib" inside the project and place the required JPA jars and MySQL Connector jar into this folder. Add the jar files to classpath of the project.
+
+
+Step2: Create Entity Bean
+An Entity Bean is a light weight persistent domain object.The Entity Bean is a Java Object that has to follow a few rules Our Entity Bean will be called Employee.Java , and it is created inside the package com.example.pojo .
+javax.persistence
+hibernate.persitence
+
+
+
+Employee.java
+
+package com.example.pojo;
+
+public class Employee {
+    private Long id;
+    private String name;
+    private String email;
+    private String department;
+ 
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public String getDepartment() {
+        return department;
+    }
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+    public String toString() {
+        return "Employee [name=" + name + ", email=" + email + " , department="
+                + department + "]";
+    }
+}
+
+Step3: Create persistence.xml
+Create a directory "META-INF" in "src" folder and create the file "persistence.xml" inside it and add following code into this file.
+
+persistence.xml
+
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+<persistence-unit name="TestPersistence"
+transaction-type="RESOURCE_LOCAL">
+<class>com.example.pojo.Employee</class>
+<properties>
+<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+<property name="javax.persistence.jdbc.url"
+value="jdbc:mysql://localhost:3306/jpadb" />
+<property name="javax.persistence.jdbc.user" value="root" />
+<property name="javax.persistence.jdbc.password"
+value="mukesh" />
+<!-- EclipseLink should create the database schema automatically -->
+<property name="eclipselink.ddl-generation" value="create-tables" />
+<property name="eclipselink.ddl-generation.output-mode"
+value="database" />
+</properties>
+</persistence-unit>
+</persistence>
+The persistence.xml file indicates that there is only one Persistence Unit is mapped with the name TestPersistence, the transaction type for this Persistence Unit is RESOURCE_LOCAL. There are two types of transaction:
+
+JTA
+RESOURCE_LOCAL
+If you selects RESOURCE_LOCAL then the transaction will be managed by the JPA Provider Implementation in use. If JTA is specified then the transactions will be managed by the Application Server.
+
+If one only wants to have JPA transactions then RESOURCE_LOCAL is a good choice. If one would like the transactions to contain other resources other than JPA, like EJBs,JMS then JTA is the correct choice.
+
+
+
+Step4: Test your Program
+Create the following Test class which will create a new entry every time it is called. After the first call you need to remove the property "eclipselink.ddl-generation" from persistence.xml otherwise you will receive an error as EclipseLink tries to create the database scheme again. Alternative you could set the property to "drop-and-create-tables" but this would drop your database schema at every run.
+
+Add following code into Test.java
+
+Test.java
+
+
+package com.example.test;
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+import com.example.pojo.Employee;
+public class Test {
+    private static final String PERSISTENCE_UNIT_NAME = "employee";
+      private static EntityManagerFactory factory;
+      public static void main(String[] args) {
+        factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+        EntityManager em = factory.createEntityManager();
+        // read the existing entries and write to console
+        Query q = em.createQuery("select e from Employee e");
+        List<Employee> employeeList = q.getResultList();
+        for (Employee employee : employeeList) {
+          System.out.println(employee);
+        }
+        System.out.println("Size: " + employeeList.size());
+        // create new todo
+        em.getTransaction().begin();
+        Employee emp = new Employee();
+        emp.setName("Mukesh");
+        emp.setEmail("m@gmail.com");
+        emp.setDepartment("Finance");
+        em.persist(emp);
+        em.getTransaction().commit();
+        em.close();
+      }
+    }
