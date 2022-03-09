@@ -57,25 +57,24 @@ public class Course {
         EntityManager entityMgr = getEntityManager();
         entityMgr.getTransaction().begin();
 
-//        Employee emp = new Employee();
-//        emp.setId(102);
-//        emp.setName("Sushant");
-//        emp.setEmail("s@hmail.com");
-//        emp.setDepartment("Sales");
-//        entityMgr.persist(emp);
-
-        Query q = entityMgr.createNativeQuery("SELECT e.emp_id, e.emp_name,e.email,e.department FROM employee e",Course.class);
+        Course c = new Course();
+        c.setCid(101L);
+        c.setCname("Java");
+        c.setPrice(999);
+        entityMgr.persist(c);
+        System.out.println("Record Successfully Inserted In The Database");
+        Query q = entityMgr.createNativeQuery("SELECT c.cid, c.cname,c.price FROM course c",Course.class);
         @SuppressWarnings("unchecked")
-        List<Employee> employees =(List<Employee>) q.getResultList();
+        List<Course> courses =(List<Course>) q.getResultList();
 
-        for(Employee e: employees) {
-            System.out.println(e.getId()+" "+e.getName()+" "+e.getEmail()+" "+e.getDepartment());
+        for(Course C: courses) {
+            System.out.println(C.getCid()+" "+C.getCname()+" "+C.getPrice());
         }
 
         entityMgr.getTransaction().commit();
 
         entityMgr.clear();
-//        System.out.println("Record Successfully Inserted In The Database");
+
     }
 
 }
