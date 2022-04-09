@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="form.css">
+    <title>Registration Form</title>
+</head>
+<body>
+<div class="main">
+    <h2>Register Here</h2>
+    <div class="form">
+        <form id="register">
+            <br>
+            <label>First Name : </label>
+            <br>
+            <input type="text" name="fname" id="fname" placeholder="Enter your first name">
+            <br><br>
+            <label>Middle Name : </label>
+            <br>
+            <input type="text" name="mname" id="mname" placeholder="Enter your middle name">
+            <br><br>
+            <label>Last Name : </label>
+            <br>
+            <input type="text" name="lname" id="lname" placeholder="Enter your last name">
+            <br><br>
+            <label>Your Age : </label>
+            <br>
+            <input type="number" name="age" id="age" placeholder="Enter your age">
+            <br><br>
+
+            <label>Choose your course : </label>
+            <select id="course" name="course">
+                <option value="BTECH">BTECH</option>
+                <option value="BPHARMA">BPHARMA</option>
+                <option value="MBA">MBA</option>
+                <option value="Other">Other</option>
+            </select>
+            <br><br>
+            <label>Gender : </label>
+            <br>
+            <input type="radio" name="gender" id="male">
+            <span>Male</span>
+            <br>
+            <input type="radio" name="gender" id="female">
+            <span>Female</span>
+            <br>
+            <input type="radio" name="gender" id="others">
+            <span>Others</span>
+            <br><br>
+
+            <label>Phone number : </label>
+            <select id="phone" name="phone">
+                <option value="+91">+91</option>
+            </select>
+            <input type="tel" name="phone" placeholder="Enter your phone number">
+            <br><br>
+
+            <label>Address : </label>
+            <br>
+            <textarea type="textarea" name="text" id="address" cols="30" rows="5" placeholder="Enter your Address"></textarea>
+            <br><br>
+            <label>Email : </label>
+            <br>
+            <input type="email" name="email" id="email" placeholder="Enter your valid email">
+            <br><br>
+            <label>Password : </label>
+            <br>
+            <input type="password" name="password" id="pass">
+            <br><br>
+            <label>Re-type Password : </label>
+            <br>
+            <input type="password" name="password" id="password">
+            <br><br>
+
+            <input type="button" value="Submit" name="submit" id="submit">
+            <br><br>
+        </form>
+    </div>
+</div>
+</body>
+</html>
